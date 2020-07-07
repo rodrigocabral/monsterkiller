@@ -5,11 +5,36 @@
     <title>Matador de Monstro</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <script src="https://ubpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-    <div class="app">
-        <div class="panel scores"></div>
+    <div id="app">
+        <div class="panel scores">
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar">
+                    <div class="life" 
+                    :class="{danger: playerLife < 20}"
+                    :style="{width: playerLife + '%'}"
+                    >
+
+                    </div>
+                </div>
+                <div>{{ playerLife }}%</div>
+            </div>
+            <div class="score">
+                <h1>Monstro</h1>
+                <div class="life-bar">
+                    <div class="life" 
+                    :class="{danger: monsterLife < 20}"
+                    :style="{width: monsterLife + '%'}"
+                    >
+
+                    </div>
+                </div>
+                <div>{{ monsterLife }}%</div>
+            </div>
+        </div>
         <div class="panel result"></div>
         <div class="panel buttons"></div>
         <div class="panel logs"></div>
